@@ -75,17 +75,17 @@ CREATE TABLE DormitoryStaff (
 );
 
 --Zehra'nın Kısım
-CREATE TABLE roomtable (
+CREATE TABLE RoomTable (
 RoomID INT PRIMARY KEY,
 RoomNumber INT IDENTITY(1,1),
-RoomBlock CHAR(1) CHECK (Block IN ('A', 'B')), 
-Occupancy TINYINT CHECK (Occupancy >= 0), 
-BedCount TINYINT CHECK (BedCount BETWEEN 1 AND 9),
+RoomBlock CHAR(1) NOT NULL CHECK (Block IN ('A', 'B')), 
+Occupancy TINYINT NOT NULL CHECK (Occupancy >= 0), 
+BedCount TINYINT NOT NULL CHECK (BedCount BETWEEN 1 AND 9),
     CHECK (Occupancy <= BedCount),
-	FOREIGN KEY (BlockID) REFERENCES BlockTable(BlockID), 
+	FOREIGN KEY (DormBlockID) REFERENCES DormBlockTable(DormBlockID), 
 );
 
-CREATE TABLE DormBlockTable (ğ
+CREATE TABLE DormBlockTable (
     DormBlockID INT PRIMARY KEY,
     BlockName CHAR(1) NOT NULL CHECK (BlockName IN ('A', 'B')),
     RoomCount INT NOT NULL CHECK (RoomCount BETWEEN 0 AND 300),
