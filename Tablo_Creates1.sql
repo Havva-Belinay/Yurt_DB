@@ -51,25 +51,45 @@ CREATE TABLE Veli(
 	Telefon char(10)
 		CONSTRAINT ck_telefon 
 		check(Telefon like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
-	ÖðrenciID smallint
-	FOREIGN KEY (ÖðreciID) REFERENCES Öðrenci (ÖðrenciID)
+	Ã–Ã°renciID smallint
+	FOREIGN KEY (Ã–Ã°reciID) REFERENCES Ã–Ã°renci (Ã–Ã°renciID)
 )
 
 --Hilalin kisim
 CREATE TABLE MealTable (
-    MealID INT PRIMARY KEY,        -- Benzersiz yemek kimliði
-    Breakfast NVARCHAR(81),      -- Kahvaltý menüsü
-    Dinner NVARCHAR(81),         -- Akþam yemeði menüsü
-    Price DECIMAL(3, 3)          -- Yemek fiyatý
+    MealID INT PRIMARY KEY,        -- Benzersiz yemek kimliÃ°i
+    Breakfast NVARCHAR(81),      -- KahvaltÃ½ menÃ¼sÃ¼
+    Dinner NVARCHAR(81),         -- AkÃ¾am yemeÃ°i menÃ¼sÃ¼
+    Price DECIMAL(3, 3)          -- Yemek fiyatÃ½
 );
 
 
 CREATE TABLE DormitoryStaff (
-    StaffID INT PRIMARY KEY,         -- Benzersiz personel kimliði
-    FullName NVARCHAR(81),          -- Personelin adý ve soyadý
-    JobTitle NVARCHAR(81),          -- Görevi
-    WorkingHours NVARCHAR(50),       -- Çalýþma saatleri
-    PhoneNumber NVARCHAR(15),        -- Telefon numarasý
-    DormID INT,                      -- Ýlgili yurt ID'si (foreign key)
-    FOREIGN KEY (DormID) REFERENCES DormitoryTable(DormID) -- YurtTablosu ile iliþkilendirme
+    StaffID INT PRIMARY KEY,         -- Benzersiz personel kimliÃ°i
+    FullName NVARCHAR(81),          -- Personelin adÃ½ ve soyadÃ½
+    JobTitle NVARCHAR(81),          -- GÃ¶revi
+    WorkingHours NVARCHAR(50),       -- Ã‡alÃ½Ã¾ma saatleri
+    PhoneNumber NVARCHAR(15),        -- Telefon numarasÃ½
+    DormID INT,                      -- Ãlgili yurt ID'si (foreign key)
+    FOREIGN KEY (DormID) REFERENCES DormitoryTable(DormID) -- YurtTablosu ile iliÃ¾kilendirme
+);
+
+--Zehra'nÄ±n KÄ±sÄ±m
+CREATE TABLE roomtable (
+RoomID INT PRIMARY KEY,
+RoomNumber INT IDENTITY(1,1),
+RoomBlock CHAR(1) CHECK (Block IN ('A', 'B')), 
+Occupancy TINYINT CHECK (Occupancy >= 0), 
+BedCount TINYINT CHECK (BedCount BETWEEN 1 AND 9),
+    CHECK (Occupancy <= BedCount),
+	FOREIGN KEY (BlockID) REFERENCES BlockTable(BlockID), 
+);
+
+CREATE TABLE DormBlockTable (ÄŸ
+    DormBlockID INT PRIMARY KEY,
+    BlockName CHAR(1) NOT NULL CHECK (BlockName IN ('A', 'B')),
+    RoomCount INT NOT NULL CHECK (RoomCount BETWEEN 0 AND 300),
+    Capacity INT NOT NULL CHECK (Capacity BETWEEN 0 AND 1200),
+    AvailableBeds INT NOT NULL CHECK (AvailableBeds >= 0 AND AvailableBeds <= Capacity)
+	FOREIGN KEY (YurtID) REFERENCES YurtBilgi(YurtID), 
 );
