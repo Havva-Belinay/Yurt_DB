@@ -93,3 +93,61 @@ CREATE TABLE DormBlockTable (
     AvailableBeds INT NOT NULL CHECK (AvailableBeds >= 0 AND AvailableBeds <= Capacity)
 	FOREIGN KEY (YurtID) REFERENCES YurtBilgi(YurtID), 
 );
+
+
+-- VERİ GİRİŞİ 
+--Zehra 
+--Yurt blok bilgileri / 2 adet blok var A ve B 
+INSERT INTO DormBlockTable (DormBlockID, BlockName, RoomCount, Capacity, AvailableBeds, DormitoryID)
+VALUES 
+    (1, 'A', 180, 720, 20, 1),  -- A Blok, 720 kapasite, 20 boş yatak
+    (2, 'B', 170, 680, 30, 1),  -- B Blok, 680 kapasite, 30 boş yatak
+
+--Yurt bloklarındaki 180 ve 170 odanın hepsini döngü ile veritabanına kaydettim. Boş yatak sayısını korumak için boş yatak sayı sınırlarını kontrol ettirerek 
+	--odalardaki kişi sayısını 1-4 arası rastgele verdirttim. Boş yatak sınırına ulasınca tüm odalar tam dolu olarak veri girişi olacak.
+	
+-- A BLOK İÇİN
+DECLARE @Counter INT = 1; -- Sayaç başlangıcı
+DECLARE @RoomBlock CHAR(1) = 'A'; -- Blok adı
+DECLARE @Occupancy INT; -- Doluluk değişkeni
+DECLARE @TotalBeds INT = 720; -- Toplam 180 oda × 4 yatak
+DECLARE @TotalEmptyBeds INT = 20; -- A blok için toplam boş yatak
+
+WHILE @Counter <= 180
+BEGIN
+    -- Yatak doluluk oranını rastgele belirle, toplam boş yatak sınırını koru
+    IF @TotalBeds - @TotalEmptyBeds >= 4 * (@Counter - 1)
+        SET @Occupancy = FLOOR(RAND() * 4) + 1;
+    ELSE
+        SET @Occupancy = 4; -- Kalan odaları tamamen doldur
+    
+    INSERT INTO RoomTable (RoomBlock, Occupancy, BedCount)
+    VALUES (@RoomBlock, @Occupancy, 4);
+    
+    -- Boş yatak sayısını güncelle
+    SET @TotalEmptyBeds = @TotalEmptyBeds - (4 - @Occupancy);
+    SET @Counter = @Counter + 1;
+END;
+
+-- B BLOK İÇİN
+SET @Counter = 1; -- Sayaç sıfırla
+SET @RoomBlock = 'B'; -- Blok adı
+SET @TotalBeds = 680; -- Toplam 170 oda × 4 yatak
+SET @TotalEmptyBeds = 30; -- B blok için toplam boş yatak
+
+WHILE @Counter <= 170
+BEGIN
+    -- Yatak doluluk oranını rastgele belirle, toplam boş yatak sınırını koru
+    IF @TotalBeds - @TotalEmptyBeds >= 4 * (@Counter - 1)
+        SET @Occupancy = FLOOR(RAND() * 4) + 1;
+    ELSE
+        SET @Occupancy = 4; -- Kalan odaları tamamen doldur
+    
+    INSERT INTO RoomTable (RoomBlock, Occupancy, BedCount)
+    VALUES (@RoomBlock, @Occupancy, 4);
+    
+    -- Boş yatak sayısını güncelle
+    SET @TotalEmptyBeds = @TotalEmptyBeds - (4 - @Occupancy);
+    SET @Counter = @Counter + 1;
+END;
+
