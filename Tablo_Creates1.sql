@@ -94,7 +94,6 @@ CREATE TABLE StudentTable (
     FOREIGN KEY (DormBlockID) REFERENCES DormBlockTable(DormBlockID),
     FOREIGN KEY (DormID) REFERENCES DormitoryInfo(DormID),
     FOREIGN KEY (MealID) REFERENCES MealTable(MealID),
-    FOREIGN KEY (PaymentID) REFERENCES Paymenttable(PaymentID),
     FOREIGN KEY (ParentID) REFERENCES Parent(ParentID),
     CONSTRAINT ck_iban CHECK (IBAN LIKE 'TR[0-9][0-9][A-Z0-9]{24}') -- IBAN formatı kontrolü
 );
