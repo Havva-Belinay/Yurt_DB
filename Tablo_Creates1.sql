@@ -83,21 +83,21 @@ CREATE TABLE StudentTable (
     Department NVARCHAR(100), 
     Grade NVARCHAR(10),
     University NVARCHAR(100), 
-    RoomID INT,
-	DormBlockID INT,
-	DormID INT,
-    MealID INT, 
-	PaymentID NVARCHAR(50),
+    RoomID INT,               
+    DormBlockID INT,          
+    DormID smallint,          
+    MealID INT,               
+    PaymentID NVARCHAR(50),   
     RegistrationDate DATE, 
-	ParentID INT,
-	DormID smallint,
+    ParentID INT,             
     FOREIGN KEY (RoomID) REFERENCES RoomTable(RoomID), 
     FOREIGN KEY (DormBlockID) REFERENCES DormBlockTable(DormBlockID),
     FOREIGN KEY (DormID) REFERENCES DormitoryInfo(DormID),
-	FOREIGN KEY (MealID) REFERENCES MealTable(MealID),
-	FOREIGN KEY (PaymentID) REFERENCES Paymenttable(PaymentID),
-	FOREIGN KEY (ParentID) REFERENCES ParentTable(ParentID)
+    FOREIGN KEY (MealID) REFERENCES MealTable(MealID),
+    FOREIGN KEY (ParentID) REFERENCES Parent(ParentID),
+    CONSTRAINT ck_iban CHECK (IBAN LIKE 'TR[0-9][0-9][A-Z0-9]{24}') -- IBAN formatı kontrolü
 );
+
 
 
 -- VERİ GİRİŞİ 
@@ -156,3 +156,9 @@ BEGIN
     SET @Counter = @Counter + 1;
 END;
 
+--hatice veri girişi 
+-- StudentTable Tablosuna Veri Ekleniyor
+INSERT INTO StudentTable (FullName, TC, IBAN, PhoneNumber, BedNumber, RoomNumber, ExitTime, EntryTime, Deposit, BirthDate, Department, Grade, University, RoomID, DormBlockID, DormID, MealID, PaymentID, RegistrationDate, ParentID)
+VALUES 
+    ('Fatma Yıldız', '12345678901', 'TR12345678901234567890123456', '5559876543', 1, 101, NULL, '2024-09-01', 500.00, '2000-05-01', 'Bilgisayar Mühendisliği', '1', 'Düzce Üniversitesi', 1, 1, 1, 1, 1, '2024-09-01', 1),
+    ('Ayşe Demir', '12345678902', 'TR22345678901234567890123456', '5558765432', 2, 102, NULL, '2024-09-01', 600.00, '2001-06-15', 'Elektrik Mühendisliği', '2', 'Düzce Üniversitesi', 2, 2, 1, 2, 2, '2024-09-01', 2);
