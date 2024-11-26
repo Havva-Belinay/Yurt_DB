@@ -1,3 +1,5 @@
+
+
 -- Belinay kýsmý (Belinay's section)
 CREATE TABLE DormitoryInfo(
     DormID smallint PRIMARY KEY,
@@ -20,6 +22,11 @@ CREATE TABLE Parent(
     StudentID smallint
 );
 
+ALTER TABLE Parent ADD
+	CONSTRAINT fk_studentID
+	FOREIGN KEY (StudentID) REFERENCES StudentTable (StudentID);
+
+
 -- Hilal'in kýsmý (Hilal's section)
 CREATE TABLE MealTable (
     MealID INT PRIMARY KEY,        -- Unique meal ID
@@ -37,6 +44,11 @@ CREATE TABLE DormitoryStaff (
     DormID smallint                -- Dormitory ID
 );
 
+ALTER TABLE DormitoryStaff ADD
+	CONSTRAINT fk_dormID_staff
+	FOREIGN KEY (DormID) REFERENCES DormitoryInfo (DormID);
+
+
 -- Zehra'nýn kýsmý (Zehra's section)
 CREATE TABLE DormBlockTable(
     DormBlockID INT PRIMARY KEY,
@@ -47,15 +59,32 @@ CREATE TABLE DormBlockTable(
     DormID smallint
 );
 
+ALTER TABLE DormBlockTable ADD
+	CONSTRAINT fk_dormID_blok_table
+	FOREIGN KEY (DormID) REFERENCES DormitoryInfo (DormID);
+
+
 CREATE TABLE RoomTable (
     RoomID INT PRIMARY KEY,
     RoomNumber INT IDENTITY(1,1),
     RoomBlock CHAR(1) NOT NULL CHECK (RoomBlock IN ('A', 'B')),
     Occupancy TINYINT NOT NULL CHECK (Occupancy >= 0),
     BedCount TINYINT NOT NULL CHECK (BedCount BETWEEN 1 AND 9),
-    CHECK (Occupancy <= BedCount),
+	CONSTRAINT ck_occupancy CHECK (Occupancy <= BedCount),
     DormBlockID INT
 );
+
+drop table RoomTable
+drop table DormBlockTable
+drop table DormitoryStaff
+drop table MealTable
+drop table Parent
+drop table DormitoryInfo
+
+ALTER TABLE RoomTable ADD
+	CONSTRAINT fk_dormblockID_room_table
+	FOREIGN KEY (DormBlockID) REFERENCES DormBlockTable (DormBlockID);
+
 
 -- Hatice'nin kýsmý (Hatice's section)
 CREATE TABLE StudentTable (
@@ -77,7 +106,28 @@ CREATE TABLE StudentTable (
     DormBlockID INT,
     DormID smallint,
     MealID INT,
-    PaymentID NVARCHAR(50),
-    RegistrationDate DATE,
-    ParentID INT
+    --PaymentID NVARCHAR(50),	bunun tablosu yok
+    --RegistrationDate DATE,	bunun tablosu yok
+    ParentID smallint
 );
+
+ALTER TABLE StudentTable ADD
+	CONSTRAINT fk_roomID_student_table
+	FOREIGN KEY (RoomID) REFERENCES RoomTable (RoomID);
+
+ALTER TABLE StudentTable ADD
+	CONSTRAINT fk_dormblockID_student_table
+	FOREIGN KEY (DormBlockID) REFERENCES DormBlockTable (DormBlockID);
+
+ALTER TABLE StudentTable ADD
+	CONSTRAINT fk_dormID_student_table
+	FOREIGN KEY (DormID) REFERENCES DormitoryInfo (DormID);
+
+ALTER TABLE StudentTable ADD
+	CONSTRAINT fk_mealID_student_table
+	FOREIGN KEY (MealID) REFERENCES MealTable (MealID);
+
+ALTER TABLE StudentTable ADD
+	CONSTRAINT fk_parentID_student_table
+	FOREIGN KEY (ParentID) REFERENCES Parent (ParentID);
+
