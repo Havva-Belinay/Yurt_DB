@@ -1,0 +1,46 @@
+--Hilal Veri Girişi
+-- MealTable için örnek veri ekleme
+INSERT INTO MealTable (MealID, Breakfast, Dinner, Price) VALUES
+(1, 'Cheese, bread, boiled egg, tea', 'Grilled chicken, rice, salad', 25.50),
+(2, 'Cereal, milk, fruit', 'Spaghetti, meatballs, steamed vegetables', 22.00),
+(3, 'Toast, butter, honey, orange juice', 'Fish fillet, mashed potatoes, soup', 30.00),
+(4, 'Pancakes, syrup, coffee', 'Beef stew, bread, dessert', 27.75),
+(5, 'Omelette, vegetables, tea', 'Vegetarian pizza, soup, yogurt', 24.00),
+(6, 'Boiled eggs, cheese, olives, tea', 'Stuffed peppers, yogurt, bread', 23.00),
+(7, 'Simit, cream cheese, black tea', 'Chicken curry, rice, salad', 26.50),
+(8, 'Croissant, butter, jam, coffee', 'Vegetarian lasagna, soup, bread', 29.00),
+(9, 'Scrambled eggs, toast, juice', 'Grilled salmon, rice, steamed broccoli', 35.00),
+(10, 'Porridge, milk, fresh fruit', 'Beef stir-fry, noodles, dessert', 32.75),
+(11, 'Menemen, bread, tea', 'Kebab, bulgur pilaf, salad', 28.00),
+(12, 'Bread rolls, butter, honey, tea', 'Chicken soup, pasta, dessert', 22.50),
+(13, 'Fried eggs, sausage, tea', 'Fish stew, rice, salad', 31.00),
+(14, 'Waffles, syrup, coffee', 'Lentil soup, baked potatoes, yogurt', 24.75),
+(15, 'Bagel, cream cheese, orange juice', 'Roasted chicken, vegetables, dessert', 27.50),
+(16, 'Egg sandwich, milk, apple', 'Mushroom risotto, salad, bread', 25.00),
+(17, 'Toast, butter, tea', 'Grilled vegetables, rice, soup', 20.00),
+(18, 'Cheese omelette, toast, coffee', 'Pasta with meat sauce, salad, dessert', 28.00),
+(19, 'Cereal, milk, banana', 'Soup, steak, mashed potatoes', 33.00),
+(20, 'Pancakes, jam, tea', 'Vegetarian couscous, lentil soup, dessert', 26.00);
+
+-- DormitoryStaff için örnek veri ekleme
+INSERT INTO DormitoryStaff (StaffID, FullName, JobTitle, WorkingHours, PhoneNumber, DormID) VALUES
+(1, 'Ahmet Yılmaz', 'Security Guard', '08:00 - 18:00', '5012345678', 1),
+(2, 'Mehmet Kaya', 'Cook', '07:00 - 15:00', '5311112233', 1),
+(3, 'Elif Demir', 'Cleaning Staff', '09:00 - 17:00', '5419876543', 2),
+(4, 'Zeynep Aydın', 'Manager', '09:00 - 18:00', '5512233445', 1),
+(5, 'Ali Çelik', 'Maintenance', '10:00 - 19:00', '5556677889', 3),
+(6, 'Fatma Kılıç', 'Administrative Assistant', '08:30 - 17:30', '5034567890', 1),
+(7, 'Hakan Özdemir', 'Electrician', '09:00 - 18:00', '5423219876', 2),
+(8, 'Aysel Çetin', 'Receptionist', '07:00 - 15:00', '5319874561', 1),
+(9, 'Murat Aksoy', 'Security Guard', '18:00 - 06:00', '5526547893', 3),
+(10, 'Ayşe Turan', 'Cleaner', '06:00 - 14:00', '5451236547', 1),
+(11, 'Zeki Karahan', 'Plumber', '08:00 - 16:00', '5394567891', 2),
+(12, 'Sevim Yıldız', 'Kitchen Staff', '10:00 - 18:00', '5327891234', 1),
+(13, 'Selim Aslan', 'Cook', '05:00 - 13:00', '5339517538', 3),
+(14, 'Büşra Demir', 'HR Specialist', '09:00 - 17:00', '5507896543', 2),
+(15, 'Emre Yıldırım', 'Gardener', '07:00 - 15:00', '5513216549', 1),
+(16, 'Nazlı Çelik', 'Maintenance Manager', '08:00 - 16:00', '5347896541', 3),
+(17, 'Burak Şahin', 'IT Support', '09:00 - 18:00', '5383216548', 2),
+(18, 'Filiz Koç', 'Nurse', '14:00 - 22:00', '5369517538', 1),
+(19, 'Ali Koç', 'Janitor', '06:00 - 14:00', '5327894123', 3),
+(20, 'Seda Güneş', 'Driver', '07:00 - 15:00', '5301234567', 2);
