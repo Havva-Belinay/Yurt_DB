@@ -1,12 +1,12 @@
 
 
--- Belinay kýsmý (Belinay's section)
+-- Belinay kÃ½smÃ½ (Belinay's section)
 CREATE TABLE DormitoryInfo(
     DormID smallint PRIMARY KEY,
-    DormName varchar(50),
+    DormName varchar(50), 
     Address varchar(200),
     Phone char(10)
-        CONSTRAINT ck_phone_dormitory  -- Constraint adýný deðiþtirdik
+        CONSTRAINT ck_phone_dormitory  -- Constraint adÃ½nÃ½ deÃ°iÃ¾tirdik
         CHECK(Phone LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
     BlokNum tinyint,
     DormCapacity smallint,
@@ -27,7 +27,7 @@ ALTER TABLE Parent ADD
 	FOREIGN KEY (StudentID) REFERENCES StudentTable (StudentID);
 
 
--- Hilal'in kýsmý (Hilal's section)
+-- Hilal'in kÃ½smÃ½ (Hilal's section)
 CREATE TABLE MealTable (
     MealID INT PRIMARY KEY,        -- Unique meal ID
     Breakfast NVARCHAR(81),        -- Breakfast menu
@@ -49,7 +49,7 @@ ALTER TABLE DormitoryStaff ADD
 	FOREIGN KEY (DormID) REFERENCES DormitoryInfo (DormID);
 
 
--- Zehra'nýn kýsmý (Zehra's section)
+-- Zehra'nÃ½n kÃ½smÃ½ (Zehra's section)
 CREATE TABLE DormBlockTable(
     DormBlockID INT PRIMARY KEY,
     BlockName CHAR(1) NOT NULL CHECK (BlockName IN ('A', 'B')),
@@ -86,7 +86,7 @@ ALTER TABLE RoomTable ADD
 	FOREIGN KEY (DormBlockID) REFERENCES DormBlockTable (DormBlockID);
 
 
--- Hatice'nin kýsmý (Hatice's section)
+-- Hatice'nin kÃ½smÃ½ (Hatice's section)
 CREATE TABLE StudentTable (
     StudentID smallint IDENTITY(1000,1) PRIMARY KEY,
     FullName NVARCHAR(100),
@@ -130,4 +130,102 @@ ALTER TABLE StudentTable ADD
 ALTER TABLE StudentTable ADD
 	CONSTRAINT fk_parentID_student_table
 	FOREIGN KEY (ParentID) REFERENCES Parent (ParentID);
+
+
+
+
+
+
+--YukarÄ±dakÄ± tum kodlarÄ±n en sade ve tekrara dusmemÄ±s halÄ±
+
+-- Student Table
+CREATE TABLE StudentTable (
+    StudentID SMALLINT IDENTITY(1000,1) PRIMARY KEY,
+    FullName NVARCHAR(100),
+    TC NVARCHAR(11),
+    IBAN NVARCHAR(34),
+    PhoneNumber NVARCHAR(15),
+    BedNumber TINYINT,
+    RoomID INT,
+    ExitTime DATETIME,
+    EntryTime DATETIME,
+    Deposit DECIMAL(10, 2),
+    BirthDate DATE,
+    Department NVARCHAR(100),
+    Grade NVARCHAR(10),
+    University NVARCHAR(100),
+    DormBlockID INT,
+    DormID SMALLINT,
+    MealID INT,
+    ParentID SMALLINT,
+    CONSTRAINT fk_roomID_student_table FOREIGN KEY (RoomID) REFERENCES RoomTable (RoomID),
+    CONSTRAINT fk_dormblockID_student_table FOREIGN KEY (DormBlockID) REFERENCES DormBlockTable (DormBlockID),
+    CONSTRAINT fk_dormID_student_table FOREIGN KEY (DormID) REFERENCES DormitoryInfo (DormID),
+    CONSTRAINT fk_mealID_student_table FOREIGN KEY (MealID) REFERENCES MealTable (MealID),
+    CONSTRAINT fk_parentID_student_table FOREIGN KEY (ParentID) REFERENCES Parent (ParentID)
+);
+
+-- Dormitory Table
+CREATE TABLE DormitoryInfo (
+    DormID SMALLINT PRIMARY KEY,
+    DormName VARCHAR(50),
+    Address VARCHAR(200),
+    Phone CHAR(10),
+    BlokNum TINYINT,
+    DormCapacity SMALLINT,
+    DormWorker SMALLINT,
+    CONSTRAINT ck_phone_dormitory CHECK (Phone LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
+);
+
+-- Parent Table
+CREATE TABLE Parent (
+    ParentID SMALLINT PRIMARY KEY,
+    NameLastName VARCHAR(50),
+    Phone CHAR(10),
+    StudentID SMALLINT,
+    CONSTRAINT ck_phone_parent CHECK (Phone LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
+    CONSTRAINT fk_studentID FOREIGN KEY (StudentID) REFERENCES StudentTable (StudentID)
+);
+
+-- Meal Table
+CREATE TABLE MealTable (
+    MealID INT PRIMARY KEY,
+    Breakfast NVARCHAR(81),
+    Dinner NVARCHAR(81),
+    Price DECIMAL(5, 2) -- Adjusted for realistic precision
+);
+
+-- Dormitory Staff Table
+CREATE TABLE DormitoryStaff (
+    StaffID INT PRIMARY KEY,
+    FullName NVARCHAR(81),
+    JobTitle NVARCHAR(81),
+    WorkingHours NVARCHAR(50),
+    PhoneNumber NVARCHAR(15),
+    DormID SMALLINT,
+    CONSTRAINT fk_dormID_staff FOREIGN KEY (DormID) REFERENCES DormitoryInfo (DormID)
+);
+
+-- Dorm Block Table
+CREATE TABLE DormBlockTable (
+    DormBlockID INT PRIMARY KEY,
+    BlockName CHAR(1) NOT NULL CHECK (BlockName IN ('A', 'B')),
+    RoomCount INT NOT NULL CHECK (RoomCount BETWEEN 0 AND 300),
+    Capacity INT NOT NULL CHECK (Capacity BETWEEN 0 AND 1200),
+    AvailableBeds INT NOT NULL CHECK (AvailableBeds >= 0),
+    DormID SMALLINT,
+    CONSTRAINT fk_dormID_blok_table FOREIGN KEY (DormID) REFERENCES DormitoryInfo (DormID)
+);
+
+-- Room Table
+CREATE TABLE RoomTable (
+    RoomID INT PRIMARY KEY,
+    RoomNumber INT,
+    RoomBlock CHAR(1) NOT NULL CHECK (RoomBlock IN ('A', 'B')),
+    Occupancy TINYINT NOT NULL CHECK (Occupancy >= 0),
+    BedCount TINYINT NOT NULL CHECK (BedCount BETWEEN 1 AND 9),
+    DormBlockID INT,
+    CONSTRAINT ck_occupancy CHECK (Occupancy <= BedCount),
+    CONSTRAINT fk_dormblockID_room_table FOREIGN KEY (DormBlockID) REFERENCES DormBlockTable (DormBlockID)
+);
 
