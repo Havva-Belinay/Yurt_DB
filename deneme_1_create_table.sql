@@ -1,12 +1,12 @@
 
 
--- Belinay kýsmý (Belinay's section)
+-- Belinay kÃ½smÃ½ (Belinay's section)
 CREATE TABLE DormitoryInfo(
     DormID smallint PRIMARY KEY,
-    DormName varchar(50),
+    DormName varchar(50), 
     Address varchar(200),
     Phone char(10)
-        CONSTRAINT ck_phone_dormitory  -- Constraint adýný deðiþtirdik
+        CONSTRAINT ck_phone_dormitory  -- Constraint adÃ½nÃ½ deÃ°iÃ¾tirdik
         CHECK(Phone LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
     BlokNum tinyint,
     DormCapacity smallint,
@@ -27,7 +27,7 @@ ALTER TABLE Parent ADD
 	FOREIGN KEY (StudentID) REFERENCES StudentTable (StudentID);
 
 
--- Hilal'in kýsmý (Hilal's section)
+-- Hilal'in kÃ½smÃ½ (Hilal's section)
 CREATE TABLE MealTable (
     MealID INT PRIMARY KEY,        -- Unique meal ID
     Breakfast NVARCHAR(81),        -- Breakfast menu
@@ -51,7 +51,7 @@ ALTER TABLE Worker ADD
 --alter table DormitoryStaff
 --drop constraint fk_dormID_staff
 
--- Zehra'nýn kýsmý (Zehra's section)
+-- Zehra'nÃ½n kÃ½smÃ½ (Zehra's section)
 CREATE TABLE DormBlockTable(
     DormBlockID INT PRIMARY KEY,
     BlockName CHAR(1) NOT NULL CHECK (BlockName IN ('A', 'B')),
@@ -89,7 +89,7 @@ ALTER TABLE RoomTable ADD
 	FOREIGN KEY (DormBlockID) REFERENCES DormBlockTable (DormBlockID);
 
 
--- Hatice'nin kýsmý (Hatice's section)
+-- Hatice'nin kÃ½smÃ½ (Hatice's section)
 CREATE TABLE StudentTable (
     StudentID smallint IDENTITY(1000,1) PRIMARY KEY,
     FullName NVARCHAR(100),
@@ -133,4 +133,8 @@ ALTER TABLE StudentTable ADD
 ALTER TABLE StudentTable ADD
 	CONSTRAINT fk_parentID_student_table
 	FOREIGN KEY (ParentID) REFERENCES Parent (ParentID);
+
+
+
+
 
