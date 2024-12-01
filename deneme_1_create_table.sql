@@ -90,6 +90,18 @@ ALTER TABLE RoomTable ADD
 	FOREIGN KEY (DormBlockID) REFERENCES DormBlockTable (DormBlockID);
 
 
+CREATE TABLE StudentPassword (
+    sPasswordID INT PRIMARY KEY IDENTITY(1,1),
+    FullName NVARCHAR(81) NOT NULL,
+    sPassword CHAR(8) NOT NULL CHECK (LEN(sPassword) = 8)
+);
+
+ALTER TABLE StudentPassword ADD
+	CONSTRAINT fk_sPaswordID
+
+	FOREIGN KEY (StudentID) REFERENCES StudentTable (StudentID);
+
+
 -- Hatice'nin kýsmý (Hatice's section)
 CREATE TABLE StudentTable (
     StudentID smallint IDENTITY(1000,1) PRIMARY KEY,
