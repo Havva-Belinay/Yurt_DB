@@ -35,8 +35,8 @@ CREATE TABLE MealTable (
     Price DECIMAL(3, 3)            -- Meal price
 );
 
-CREATE TABLE DormitoryStaff (
-    StaffID INT PRIMARY KEY,       -- Unique staff ID
+CREATE TABLE Worker (
+    WorkerID INT PRIMARY KEY,       -- Unique staff ID
     FullName NVARCHAR(81),         -- Staff full name
     JobTitle NVARCHAR(81),         -- Job title
     WorkingHours NVARCHAR(50),     -- Working hours
@@ -44,10 +44,12 @@ CREATE TABLE DormitoryStaff (
     DormID smallint                -- Dormitory ID
 );
 
-ALTER TABLE DormitoryStaff ADD
-	CONSTRAINT fk_dormID_staff
+ALTER TABLE Worker ADD
+	CONSTRAINT fk_workerID
 	FOREIGN KEY (DormID) REFERENCES DormitoryInfo (DormID);
 
+--alter table DormitoryStaff
+--drop constraint fk_dormID_staff
 
 -- Zehra'nýn kýsmý (Zehra's section)
 CREATE TABLE DormBlockTable(
@@ -76,7 +78,8 @@ CREATE TABLE RoomTable (
 
 drop table RoomTable
 drop table DormBlockTable
-drop table DormitoryStaff
+drop table Worker
+
 drop table MealTable
 drop table Parent
 drop table DormitoryInfo
