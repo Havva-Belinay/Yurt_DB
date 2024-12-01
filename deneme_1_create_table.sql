@@ -44,6 +44,7 @@ CREATE TABLE Worker (
     DormID smallint                -- Dormitory ID
 );
 
+
 ALTER TABLE Worker ADD
 	CONSTRAINT fk_workerID
 	FOREIGN KEY (DormID) REFERENCES DormitoryInfo (DormID);
