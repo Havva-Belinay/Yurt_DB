@@ -1,0 +1,84 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Belinay\\Desktop\\e\u011Fitim\\\u00FCni. derslerim\\3. s\u0131n\u0131f\\veritaban\u0131 y\u00F6netim sistemleri\\Yurt projesi\\VS_yurt\\WindowsFormsApp_Yurt\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B07D4408-B8EB-46B1-AAA7-F7CDD0D897B5}|WindowsFormsApp_Yurt.csproj|c:\\users\\belinay\\desktop\\e\u011Fitim\\\u00FCni. derslerim\\3. s\u0131n\u0131f\\veritaban\u0131 y\u00F6netim sistemleri\\yurt projesi\\vs_yurt\\windowsformsapp_yurt\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07D4408-B8EB-46B1-AAA7-F7CDD0D897B5}|WindowsFormsApp_Yurt.csproj|solutionrelative:loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07D4408-B8EB-46B1-AAA7-F7CDD0D897B5}|WindowsFormsApp_Yurt.csproj|c:\\users\\belinay\\desktop\\e\u011Fitim\\\u00FCni. derslerim\\3. s\u0131n\u0131f\\veritaban\u0131 y\u00F6netim sistemleri\\yurt projesi\\vs_yurt\\windowsformsapp_yurt\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B07D4408-B8EB-46B1-AAA7-F7CDD0D897B5}|WindowsFormsApp_Yurt.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B07D4408-B8EB-46B1-AAA7-F7CDD0D897B5}|WindowsFormsApp_Yurt.csproj|c:\\users\\belinay\\desktop\\e\u011Fitim\\\u00FCni. derslerim\\3. s\u0131n\u0131f\\veritaban\u0131 y\u00F6netim sistemleri\\yurt projesi\\vs_yurt\\windowsformsapp_yurt\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B07D4408-B8EB-46B1-AAA7-F7CDD0D897B5}|WindowsFormsApp_Yurt.csproj|solutionrelative:loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 162,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 208,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Belinay\\Desktop\\e\u011Fitim\\\u00FCni. derslerim\\3. s\u0131n\u0131f\\veritaban\u0131 y\u00F6netim sistemleri\\Yurt projesi\\VS_yurt\\WindowsFormsApp_Yurt\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Belinay\\Desktop\\e\u011Fitim\\\u00FCni. derslerim\\3. s\u0131n\u0131f\\veritaban\u0131 y\u00F6netim sistemleri\\Yurt projesi\\VS_yurt\\WindowsFormsApp_Yurt\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T14:52:28.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "loginpage.cs",
+              "DocumentMoniker": "C:\\Users\\Belinay\\Desktop\\e\u011Fitim\\\u00FCni. derslerim\\3. s\u0131n\u0131f\\veritaban\u0131 y\u00F6netim sistemleri\\Yurt projesi\\VS_yurt\\WindowsFormsApp_Yurt\\loginpage.cs",
+              "RelativeDocumentMoniker": "loginpage.cs",
+              "ToolTip": "C:\\Users\\Belinay\\Desktop\\e\u011Fitim\\\u00FCni. derslerim\\3. s\u0131n\u0131f\\veritaban\u0131 y\u00F6netim sistemleri\\Yurt projesi\\VS_yurt\\WindowsFormsApp_Yurt\\loginpage.cs",
+              "RelativeToolTip": "loginpage.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAswBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T14:43:43.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "loginpage.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\Belinay\\Desktop\\e\u011Fitim\\\u00FCni. derslerim\\3. s\u0131n\u0131f\\veritaban\u0131 y\u00F6netim sistemleri\\Yurt projesi\\VS_yurt\\WindowsFormsApp_Yurt\\loginpage.cs",
+              "RelativeDocumentMoniker": "loginpage.cs",
+              "ToolTip": "C:\\Users\\Belinay\\Desktop\\e\u011Fitim\\\u00FCni. derslerim\\3. s\u0131n\u0131f\\veritaban\u0131 y\u00F6netim sistemleri\\Yurt projesi\\VS_yurt\\WindowsFormsApp_Yurt\\loginpage.cs [Tasar\u0131m]",
+              "RelativeToolTip": "loginpage.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T14:43:37.784Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

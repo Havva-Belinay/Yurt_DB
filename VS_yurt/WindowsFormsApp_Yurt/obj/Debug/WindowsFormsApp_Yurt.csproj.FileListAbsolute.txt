@@ -1,0 +1,10 @@
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\bin\Debug\WindowsFormsApp_Yurt.exe.config
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\bin\Debug\WindowsFormsApp_Yurt.exe
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\bin\Debug\WindowsFormsApp_Yurt.pdb
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Debug\WindowsFormsApp_Yurt.csproj.AssemblyReference.cache
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Debug\WindowsFormsApp_Yurt.Properties.Resources.resources
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Debug\WindowsFormsApp_Yurt.csproj.GenerateResource.cache
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Debug\WindowsFormsApp_Yurt.csproj.CoreCompileInputs.cache
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Debug\WindowsFormsApp_Yurt.exe
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Debug\WindowsFormsApp_Yurt.pdb
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Debug\WindowsFormsApp_Yurt.loginpage.resources
