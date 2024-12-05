@@ -36,12 +36,14 @@ CREATE TABLE MealTable (
 );
 
 CREATE TABLE Worker (
-    WorkerID INT PRIMARY KEY,       -- Unique staff ID
-    FullName NVARCHAR(81),         -- Staff full name
-    JobTitle NVARCHAR(81),         -- Job title
-    WorkingHours NVARCHAR(50),     -- Working hours
-    PhoneNumber NVARCHAR(15),      -- Phone number
-    DormID smallint                -- Dormitory ID
+    WorkerID INT PRIMARY KEY,               -- Unique staff ID
+    FullName NVARCHAR(81) NOT NULL,         -- Staff full name
+    IdNumber CHAR(11) NOT NULL UNIQUE,      -- People TC number
+    JobTitle NVARCHAR(81) NOT NULL,         -- Job title
+    WorkingHours NVARCHAR(50) NOT NULL,     -- Working hours 
+    PhoneNumber NVARCHAR(15),               -- Phone number
+    WorkerPassword char(12) NOT NULL,
+    DormID smallint NOT NULL                -- Dormitory ID
 );
 
 
@@ -106,7 +108,8 @@ ALTER TABLE StudentPassword ADD
 CREATE TABLE StudentTable (
     StudentID smallint IDENTITY(1000,1) PRIMARY KEY,
     FullName NVARCHAR(100),
-    TC NVARCHAR(11),
+    TC NVARCHAR(11) NOT NULL UNIQUE,    
+    StudentPassword CHAR(8) NOT NULL,
     IBAN NVARCHAR(34),
     PhoneNumber NVARCHAR(15),
     BedNumber TINYINT,
