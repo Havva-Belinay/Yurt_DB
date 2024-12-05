@@ -44,12 +44,14 @@ CREATE TABLE Worker (
     PhoneNumber NVARCHAR(15),               -- Phone number
     WorkerPassword char(12) NOT NULL,
     DormID smallint NOT NULL                -- Dormitory ID
+	
 );
 
 
 ALTER TABLE Worker ADD
 	CONSTRAINT fk_workerID
 	FOREIGN KEY (DormID) REFERENCES DormitoryInfo (DormID);
+ALTER TABLE Worker ADD IsAdmin bit NOT NULL DEFAULT 0;   -- True / false 
 
 --alter table DormitoryStaff
 --drop constraint fk_dormID_staff
