@@ -14,3 +14,4 @@ BEGIN
     WHERE 
         FullName LIKE @Ad + '%'; -- Ad ile başlayan isimleri döndürür
 END;
+ --EXEC sp_SearchByName @Ad = 'Zehra';  arama şeklimiz bu
