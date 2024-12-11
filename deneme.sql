@@ -122,6 +122,16 @@ CREATE TABLE StudentTable (
     DormID smallint,
     ParentID smallint
 );
+
+
+CREATE TABLE DeletedStudentRecords (
+    DeletedID INT IDENTITY(1,1) PRIMARY KEY,
+    StudentID SMALLINT,
+    FullName NVARCHAR(100),
+    TC NVARCHAR(11),
+    DeletionTime DATETIME DEFAULT GETDATE()
+);
+
 ------------------<<<<<<<<<<<<<<<<<yemek kısmı için trigger lazım. yendi mi yenmedi mi diye>>>>>>>>>>>>>>>>>>>
 
 
@@ -178,42 +188,32 @@ ALTER TABLE WorkerPassword ADD
 --drop table DormitoryInfo
 
 
-go
-CREATE TRIGGER tg_insert_student
-ON StudentTable
-AFTER INSERT
-AS
-BEGIN
-	PRINT 'Başarıyla yeni öğrenci eklendi.'
-END
 GO
-
-CREATE TRIGGER tg_delete_student
+CREATE TRIGGER trg_AfterDelete_Student
 ON StudentTable
 AFTER DELETE
 AS
 BEGIN
-	PRINT 'Silme işlemi başarı ile gerçekleştirildi.'
-END
+    -- Silinen kayıtları DeletedStudentRecords tablosuna ekle
+    INSERT INTO DeletedStudentRecords (StudentID, FullName, TC)
+    SELECT d.StudentID, d.FullName, d.TC
+    FROM DELETED d;
+
+    PRINT 'Silinen kayıtlar DeletedStudentRecords tablosuna kaydedildi.';
+END;
 GO
 
-
-CREATE TRIGGER tg_insert_worker
-ON Worker
-AFTER INSERT
+CREATE TRIGGER trg_DeleteStudent_Parent
+ON StudentTable
+AFTER DELETE
 AS
 BEGIN
-	PRINT 'Başarıyla yeni personel eklendi.'
-END
-GO
+    -- Silinen öğrencinin Parent tablosundaki velisini sil
+    DELETE FROM Parent
+    WHERE Parent.StudentID IN (SELECT d.StudentID FROM DELETED d);
 
-CREATE TRIGGER tg_insert_parent
-ON Parent
-AFTER INSERT
-AS
-BEGIN
-	PRINT 'Başarıyla veli eklendi.'
-END
+    PRINT 'Silinen öğrencinin veli bilgileri de Parent tablosundan kaldırıldı.';
+END;
 GO
 
 CREATE TRIGGER tg_update_student
