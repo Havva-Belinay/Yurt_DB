@@ -177,3 +177,162 @@ ALTER TABLE WorkerPassword ADD
 --drop table Parent
 --drop table DormitoryInfo
 
+
+go
+CREATE TRIGGER tg_insert_student
+ON StudentTable
+AFTER INSERT
+AS
+BEGIN
+	PRINT 'Başarıyla yeni öğrenci eklendi.'
+END
+GO
+
+CREATE TRIGGER tg_delete_student
+ON StudentTable
+AFTER DELETE
+AS
+BEGIN
+	PRINT 'Silme işlemi başarı ile gerçekleştirildi.'
+END
+GO
+
+
+CREATE TRIGGER tg_insert_worker
+ON Worker
+AFTER INSERT
+AS
+BEGIN
+	PRINT 'Başarıyla yeni personel eklendi.'
+END
+GO
+
+CREATE TRIGGER tg_insert_parent
+ON Parent
+AFTER INSERT
+AS
+BEGIN
+	PRINT 'Başarıyla veli eklendi.'
+END
+GO
+
+CREATE TRIGGER tg_update_student
+ON StudentTable
+AFTER UPDATE
+AS
+BEGIN
+    -- Oda numarası güncellendiyse
+    IF UPDATE(RoomNumber)
+    BEGIN
+        DECLARE @RoomNumber smallint;
+        DECLARE @BedCount smallint;
+        DECLARE @Occupancy smallint;
+
+        SELECT @RoomNumber = RoomNumber
+        FROM inserted;
+
+        SELECT @BedCount = BedCount, @Occupancy = Occupancy
+        FROM RoomTable
+        WHERE RoomNumber = @RoomNumber;
+
+        -- Eğer yatak kapasitesi doluysa, işlem yapılmaz
+        IF @Occupancy >= @BedCount
+        BEGIN
+            RAISERROR('Oda kapasitesi dolmuştur, başka bir odaya geçiş yapın.', 16, 1);
+            ROLLBACK TRANSACTION;
+        END
+    END
+END;
+go
+
+CREATE TRIGGER tg_update_mealtable
+ON MealTable
+AFTER UPDATE
+AS
+BEGIN
+    -- Yemek durumu güncellendiyse
+    IF UPDATE(IsBreakfast) OR UPDATE(IsDinner)
+    BEGIN
+        DECLARE @StudentID smallint;
+        DECLARE @IsBreakfast bit;
+        DECLARE @IsDinner bit;
+
+        SELECT @StudentID = StudentID, @IsBreakfast = IsBreakfast, @IsDinner = IsDinner
+        FROM inserted;
+
+        -- Eğer yemek durumları değiştiyse, yeni durumu kaydedin
+        IF @IsBreakfast = 1
+        BEGIN
+            UPDATE MealTable
+            SET IsBreakfast = 1
+            WHERE StudentID = @StudentID;
+        END
+
+        IF @IsDinner = 1
+        BEGIN
+            UPDATE MealTable
+            SET IsDinner = 1
+            WHERE StudentID = @StudentID;
+        END
+    END
+END;
+go
+
+
+CREATE TRIGGER tg_insert_studenttable
+ON StudentTable
+INSTEAD OF INSERT
+AS
+BEGIN
+    -- Öğrenci ekleme işleminden önce oda kapasitesini kontrol et
+    IF EXISTS (
+        SELECT 1
+        FROM inserted i
+        JOIN RoomTable r ON i.RoomNumber = r.RoomNumber
+        WHERE r.BedCount > r.Occupancy
+    )
+    BEGIN
+        -- Eğer yer varsa, öğrenci kaydını gerçekleştirin
+        INSERT INTO StudentTable (FullName, TC, RoomNumber, BedNumber, Department, Grade, University, DormID, ParentID)
+        SELECT FullName, TC, RoomNumber, BedNumber, Department, Grade, University, DormID, ParentID
+        FROM inserted;
+    END
+    ELSE
+    BEGIN
+        -- Eğer oda doluysa, uygun oda bulunamadığını belirten mesaj
+        RAISERROR('Odadaki yatak kapasitesi dolmuştur. Lütfen başka bir oda seçiniz.', 16, 1);
+    END
+END;
+go
+
+
+CREATE TRIGGER tg_update_roomtable
+ON RoomTable
+INSTEAD OF UPDATE
+AS
+BEGIN
+    -- Yeni veriler 'inserted' sanal tablosunda, eski veriler 'deleted' sanal tablosunda bulunur.
+    -- Koşul kontrolü
+    IF EXISTS (
+        SELECT 1
+        FROM inserted i
+        JOIN RoomTable r ON i.RoomID = r.RoomID
+        WHERE i.Occupancy > r.BedCount
+    )
+    BEGIN
+        -- Eğer doluluk izin verilen değeri aşıyorsa uyarı ver ve işlem yapılmasın
+        PRINT 'Doluluk toplam yatak sayısını aşamaz. Güncelleme işlemi engellendi.';
+    END
+    ELSE
+    BEGIN
+        -- Eğer koşul sağlanıyorsa güncelleme işlemini gerçekleştir
+        UPDATE RoomTable
+        SET Occupancy = i.Occupancy,
+            BedCount = i.BedCount
+        FROM RoomTable r
+        JOIN inserted i ON r.RoomID = i.RoomID;
+
+        PRINT 'Güncelleme işlemi başarıyla tamamlandı.';
+    END
+END;
+GO
