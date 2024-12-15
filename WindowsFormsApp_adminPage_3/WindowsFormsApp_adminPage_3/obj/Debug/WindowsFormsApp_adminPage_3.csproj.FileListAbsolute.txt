@@ -1,0 +1,10 @@
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_3\WindowsFormsApp_adminPage_3\obj\Debug\WindowsFormsApp_adminPage_3.csproj.AssemblyReference.cache
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_3\WindowsFormsApp_adminPage_3\obj\Debug\WindowsFormsApp_adminPage_3.Properties.Resources.resources
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_3\WindowsFormsApp_adminPage_3\obj\Debug\WindowsFormsApp_adminPage_3.csproj.GenerateResource.cache
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_3\WindowsFormsApp_adminPage_3\obj\Debug\WindowsFormsApp_adminPage_3.csproj.CoreCompileInputs.cache
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_3\WindowsFormsApp_adminPage_3\bin\Debug\WindowsFormsApp_adminPage_3.exe.config
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_3\WindowsFormsApp_adminPage_3\bin\Debug\WindowsFormsApp_adminPage_3.exe
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_3\WindowsFormsApp_adminPage_3\bin\Debug\WindowsFormsApp_adminPage_3.pdb
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_3\WindowsFormsApp_adminPage_3\obj\Debug\WindowsFormsApp_adminPage_3.exe
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_3\WindowsFormsApp_adminPage_3\obj\Debug\WindowsFormsApp_adminPage_3.pdb
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_3\WindowsFormsApp_adminPage_3\obj\Debug\YedeklemeApp.Form1.resources
