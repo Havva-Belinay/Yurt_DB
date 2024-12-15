@@ -1,0 +1,10 @@
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_2\WindowsFormsApp_adminPage_2\obj\Debug\WindowsFormsApp_adminPage_2.csproj.AssemblyReference.cache
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_2\WindowsFormsApp_adminPage_2\obj\Debug\WindowsFormsApp_adminPage_2.Properties.Resources.resources
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_2\WindowsFormsApp_adminPage_2\obj\Debug\WindowsFormsApp_adminPage_2.csproj.GenerateResource.cache
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_2\WindowsFormsApp_adminPage_2\obj\Debug\WindowsFormsApp_adminPage_2.csproj.CoreCompileInputs.cache
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_2\WindowsFormsApp_adminPage_2\obj\Debug\WindowsFormsApp_adminPage_2.Form1.resources
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_2\WindowsFormsApp_adminPage_2\bin\Debug\WindowsFormsApp_adminPage_2.exe.config
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_2\WindowsFormsApp_adminPage_2\bin\Debug\WindowsFormsApp_adminPage_2.exe
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_2\WindowsFormsApp_adminPage_2\bin\Debug\WindowsFormsApp_adminPage_2.pdb
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_2\WindowsFormsApp_adminPage_2\obj\Debug\WindowsFormsApp_adminPage_2.exe
+C:\Users\hatic\source\repos\WindowsFormsApp_adminPage_2\WindowsFormsApp_adminPage_2\obj\Debug\WindowsFormsApp_adminPage_2.pdb
