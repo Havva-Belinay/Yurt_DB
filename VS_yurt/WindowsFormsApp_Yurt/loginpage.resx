@@ -117,11 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="button1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfsAAAH+CAIAAAAUJDA2AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAuIxJREFUeF7snQV0E8sChlN3oZS2UJziVuBSrMCF4g4Xd3d314u7uxUtruU+KFqs
+        vAAADrwBlbxySQAAuIxJREFUeF7snQV0E8sChlN3oZS2UJziVuBSrMCF4g4Xd3d314u7uxUtruU+KFqs
         WJFidXd3y+6bdIcQJtJNspts0vnOfzjMZmWSbL9MJrszPBKDUY7w8PBNmza1bdu2UqVKhoaGDg4OLi4u
         c+fOfffuHVwDgyni2bNnHh4eBw4c+Pfff1dhimPDhg2HDx++evXqmzdv4CuoNNj4GMUJCAgYOnSorq4u
         TwrNmzd//PgxXBtTUrly5cqA/kPMTC3AKWFmWsrOtnrl8q2qVWyLIzuVHJtbW1YyNDADr5uBvomerkHR
@@ -911,7 +914,4 @@
         /+Kz4bav7Mn5odXuOG53n7YvjqovEwB4i6n4AAADUHwASAy2/Tcy7jEiFpOwaQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="button1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

@@ -1,0 +1,14 @@
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\bin\Release\WindowsFormsApp_Yurt.exe.config
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\bin\Release\WindowsFormsApp_Yurt.exe
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\bin\Release\WindowsFormsApp_Yurt.pdb
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Release\WindowsFormsApp_Yurt.csproj.AssemblyReference.cache
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Release\WindowsFormsApp_Yurt.loginpage.resources
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Release\WindowsFormsApp_Yurt.mainpage.resources
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Release\WindowsFormsApp_Yurt.Properties.Resources.resources
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Release\WindowsFormsApp_Yurt.studentMainPage.resources
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Release\WindowsFormsApp_Yurt.StudentManagementPage.resources
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Release\WindowsFormsApp_Yurt.WorkerManagementPage.resources
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Release\WindowsFormsApp_Yurt.csproj.GenerateResource.cache
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Release\WindowsFormsApp_Yurt.csproj.CoreCompileInputs.cache
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Release\WindowsFormsApp_Yurt.exe
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Release\WindowsFormsApp_Yurt.pdb

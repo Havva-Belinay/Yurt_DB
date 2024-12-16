@@ -8,3 +8,7 @@ C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Debug\W
 C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Debug\WindowsFormsApp_Yurt.exe
 C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Debug\WindowsFormsApp_Yurt.pdb
 C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Debug\WindowsFormsApp_Yurt.loginpage.resources
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Debug\WindowsFormsApp_Yurt.mainpage.resources
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Debug\WindowsFormsApp_Yurt.studentMainPage.resources
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Debug\WindowsFormsApp_Yurt.WorkerManagementPage.resources
+C:\Users\hilal\OneDrive\Masaüstü\vyts\VS_yurt\WindowsFormsApp_Yurt\obj\Debug\WindowsFormsApp_Yurt.StudentManagementPage.resources
